@@ -1,0 +1,68 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}{\f1 Consolas;}}
+\viewkind4\uc1
+\pard\qc\b\fs32 Symmetric Text Encrypter\b0\fs24\par
+\pard\qc Cybersecurity Project Documentation\par
+\pard\sa200\par
+\pard\b 1. Project Overview\b0\par
+This project is a Python console application that encrypts and decrypts one line of text using a repeating-key XOR operation followed by a Caesar-style character shift. The implementation is provided in File-enc-dec.py.\par
+\par
+The project also includes a Windows executable named file-encrypter.exe, created with PyInstaller.\par
+\par
+\pard\b 2. Objectives\b0\par
+\pard\li360 - Demonstrate a simple symmetric encryption and decryption workflow.\par
+\pard\li360 - Accept a user-provided secret key.\par
+\pard\li360 - Use the same key to reverse the transformation.\par
+\pard\li360 - Provide a small command-line cybersecurity learning tool.\par
+\pard\li0\par
+\pard\b 3. Main Features\b0\par
+\pard\li360 - Encrypts a line of text.\par
+\pard\li360 - Decrypts text using the same secret key.\par
+\pard\li360 - Repeats the key across the length of the input text.\par
+\pard\li360 - Rejects an empty key.\par
+\pard\li360 - Handles invalid menu input without crashing.\par
+\pard\li0\par
+\pard\b 4. Encryption Algorithm\b0\par
+For each character, the program selects a key character using the position modulo the key length. During encryption, it first applies XOR and then adds a small shift based on the key character:\par
+\pard\li360\f1 encrypted = (text XOR key) + (key modulo 7)\f0\par
+During decryption, the shift is reversed before XOR is applied:\par
+\pard\li360\f1 decrypted = (encrypted - (key modulo 7)) XOR key\f0\par
+\pard\li0\par
+The Python implementation wraps character values to one byte using a value from 0 to 255 to mirror the original C++ character behavior.\par
+\par
+\pard\b 5. Requirements\b0\par
+\pard\li360 - Python 3.9 or later for running the source code.\par
+\pard\li360 - Windows for running the included executable.\par
+\pard\li360 - No third-party package is required to run the Python source.\par
+\pard\li0\par
+\pard\b 6. How to Run the Python Source\b0\par
+Open PowerShell in the File Encrypter directory and run:\par
+\pard\li360\f1 python File-enc-dec.py\f0\par
+\par
+Choose option 1 to encrypt or option 2 to decrypt. Enter the text and then enter the secret key. Decryption must use the same key that was used for encryption.\par
+\par
+\pard\b 7. How to Run the Executable\b0\par
+Double-click file-encrypter.exe, or run it from PowerShell:\par
+\pard\li360\f1 .\\file-encrypter.exe\f0\par
+\pard\li0\par
+\pard\b 8. Example Workflow\b0\par
+1. Select Encrypt Text.\par
+2. Enter the original text.\par
+3. Enter a non-empty secret key.\par
+4. Save the encrypted payload.\par
+5. Select Decrypt Text later.\par
+6. Enter the encrypted payload and the same key.\par
+\par
+\pard\b 9. Limitations and Security Notice\b0\par
+\pard\li360 - The current program processes text entered at the console; it does not read or write files despite the project folder name.\par
+\pard\li360 - XOR with a repeating key and a small shift is not modern, production-grade encryption.\par
+\pard\li360 - The program does not provide authentication, integrity checking, secure key derivation, or secure key storage.\par
+\pard\li360 - Encrypted output may contain non-printable characters and may not survive copying through a terminal.\par
+\pard\li360 - Do not use this tool to protect sensitive or production data.\par
+\pard\li0\par
+\pard\b 10. Project Files\b0\par
+\pard\li360 - File-enc-dec.py: Python source implementation.\par
+\pard\li360 - File-enc-dec.c++: Original C++ implementation.\par
+\pard\li360 - file-encrypter.exe: Standalone Windows executable.\par
+\pard\li360 - README.md: Quick-start instructions and limitations.\par
+}

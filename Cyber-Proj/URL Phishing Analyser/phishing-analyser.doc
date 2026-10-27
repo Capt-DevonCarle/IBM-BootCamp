@@ -1,0 +1,66 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}{\f1 Consolas;}}
+\viewkind4\uc1
+\pard\qc\b\fs32 Phishing and Malicious URL Analyzer\b0\fs24\par
+\pard\qc Cybersecurity Project Documentation\par
+\pard\sa200\par
+\pard\b 1. Project Overview\b0\par
+This project is a Python console application that assigns a heuristic phishing-risk score to a URL by checking for common suspicious indicators. The implementation is provided in phising-analyser.py.\par
+\par
+The project also includes a Windows executable named phising-analyser.exe, created with PyInstaller.\par
+\par
+\pard\b 2. Objectives\b0\par
+\pard\li360 - Identify common warning signs associated with suspicious URLs.\par
+\pard\li360 - Combine multiple indicators into a risk score from 0 to 100.\par
+\pard\li360 - Explain detected indicators through human-readable warnings.\par
+\pard\li360 - Provide a local educational tool for phishing awareness.\par
+\pard\li0\par
+\pard\b 3. Detection Rules\b0\par
+\pard\li360 - URLs longer than 75 characters add 20 risk points.\par
+\pard\li360 - An @ symbol adds 30 points because it can hide the actual destination domain.\par
+\pard\li360 - An apparent raw IPv4 address adds 35 points.\par
+\pard\li360 - Selected high-risk top-level domains add 20 points: .zip, .mov, .top, .xyz, .work, .kim, and .party.\par
+\pard\li360 - More than three dots adds 15 points for possible excessive subdomains.\par
+\pard\li360 - A URL beginning with http:// adds 15 points because it is not encrypted in transit.\par
+\pard\li0\par
+\pard\b 4. Risk Levels\b0\par
+\pard\li360 - 0-29: LOW RISK (Appears Safe)\par
+\pard\li360 - 30-59: MODERATE RISK (Exercise Caution)\par
+\pard\li360 - 60-100: HIGH RISK (Likely Phishing/Malicious)\par
+\pard\li0\par
+The final score is capped at 100. The analyzer lists every warning triggered by the submitted URL.\par
+\par
+\pard\b 5. Requirements\b0\par
+\pard\li360 - Python 3.9 or later for running the source code.\par
+\pard\li360 - Windows for running the included executable.\par
+\pard\li360 - No third-party package is required to run the Python source.\par
+\pard\li0\par
+\pard\b 6. How to Run the Python Source\b0\par
+Open PowerShell in the URL Phishing Analyser directory and run:\par
+\pard\li360\f1 python phising-analyser.py\f0\par
+\par
+Enter a URL when prompted. The program displays the target URL, risk score, threat level, and detected risk factors.\par
+\par
+\pard\b 7. How to Run the Executable\b0\par
+Double-click phising-analyser.exe, or run it from PowerShell:\par
+\pard\li360\f1 .\\phising-analyser.exe\f0\par
+\pard\li0\par
+\pard\b 8. Example Workflow\b0\par
+1. Start the analyzer.\par
+2. Enter a URL for inspection.\par
+3. Review the score and all detected warnings.\par
+4. Avoid visiting suspicious URLs and verify important links through a trusted channel.\par
+\par
+\pard\b 9. Limitations and Safety Notice\b0\par
+\pard\li360 - This is a local heuristic scanner; it does not use reputation services, DNS checks, certificate checks, or live website inspection.\par
+\pard\li360 - A low score does not prove that a URL is safe.\par
+\pard\li360 - A high score does not prove that a URL is malicious.\par
+\pard\li360 - The simple parser may produce false positives or miss sophisticated phishing URLs.\par
+\pard\li360 - Do not visit a suspicious URL merely to test it.\par
+\pard\li0\par
+\pard\b 10. Project Files\b0\par
+\pard\li360 - phising-analyser.py: Python source implementation.\par
+\pard\li360 - phishing-analyse.c++: Original C++ implementation.\par
+\pard\li360 - phising-analyser.exe: Standalone Windows executable.\par
+\pard\li360 - README.md: Quick-start instructions and limitations.\par
+}
