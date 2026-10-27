@@ -12,9 +12,6 @@
  - Adds risk when the URL begins with unencrypted `http://` instead of `https://`.
  - Reports a score from 0 to 100 and lists the indicators that were detected.
 
- ## Requirements
-
- - Python 3.9 or later.
 
  ## Run
 
